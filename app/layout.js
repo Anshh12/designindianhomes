@@ -43,6 +43,15 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <Head>
         <link rel="icon" href="/favicon.ico" sizes="any" />
+        <meta name="msvalidate.01" content="9FE8C362BB86815394E53A44789BC3FD" />
+        <meta name="google-site-verification" content="CAXQdsjhssz1BrLDtJ1LcQKI_53ZXcNZiiojNkcdW-c" />
+        <Script>
+        {`(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-P8VK2BRK');`}
+      </Script>
       </Head>
       <Script strategy="lazyOnLoad" id="hotjar">
         {`
@@ -57,6 +66,9 @@ export default function RootLayout({ children }) {
         `}
       </Script>
       <body className={`${bioRhyme.className}`}>
+      <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P8VK2BRK"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
         <ThemeProvider>
           <SpaceProvider>
             {/* Overlay Animation */}
