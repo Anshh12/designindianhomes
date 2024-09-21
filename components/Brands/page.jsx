@@ -98,37 +98,35 @@ const Brands = () => {
           <div className="box bi"></div>
         </div>
       </div> */}
-     
-      {/* section visible in the large view */}
-      <div className='flex justify-center mt-4'>
-      <div style={containerStyle} className="mb-2">
-              <div style={textContainerStyle} className="flex justify-center ">
-                <h1 className="sm:text-4xl text-xl font-bold text-center">
-                Our Exclusive Interior Packages
-                </h1>
 
-              </div>
-              <Image
-                width={1000}
-                height={1000}
-                src="/images/simple-gold-brush-stroke-banner-5.png"
-                alt="Paint Brush"
-                style={backgroundImageStyle}
-              />
-            </div>
+      {/* section visible in the large view */}
+      <div className="flex justify-center mt-4">
+        <div style={containerStyle} className="mb-2">
+          <div style={textContainerStyle} className="flex justify-center ">
+            <h1 className="sm:text-4xl text-xl font-bold text-center">
+              Our Exclusive Interior Packages
+            </h1>
+          </div>
+          <Image
+            width={1000}
+            height={1000}
+            src="/images/simple-gold-brush-stroke-banner-5.png"
+            alt="Paint Brush"
+            style={backgroundImageStyle}
+          />
+        </div>
       </div>
-      
+
       <div className="jiu">
-     
         <div
           variants={imagesVariant}
           initial="initial"
           whileInView="animate"
-          className="containeru"
+          className="container mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4"
         >
           {/* 1 */}
           <Link href="/offers/#top-priority">
-            <div variants={imagesVariant} className="blog-post m-4">
+            <div variants={imagesVariant} className="blog-post m-4 max-w-sm">
               <Image
                 width={1000}
                 height={1000}
@@ -150,7 +148,7 @@ const Brands = () => {
           </Link>
           {/* 2 */}
           <Link href="/offers/#second">
-            <div variants={imagesVariant} className="blog-post m-4">
+            <div variants={imagesVariant} className="blog-post m-4 max-w-sm">
               <Image
                 width={1000}
                 height={1000}
@@ -173,7 +171,7 @@ const Brands = () => {
           {/* 3 */}
 
           <Link href="/offers/#third">
-            <div variants={imagesVariant} className="blog-post m-4">
+            <div variants={imagesVariant} className="blog-post m-4 max-w-sm">
               <Image
                 width={1000}
                 height={1000}
@@ -193,7 +191,7 @@ const Brands = () => {
           </Link>
           {/* 4 */}
           <Link href="/offers/#fourth">
-            <div variants={imagesVariant} className="blog-post m-4">
+            <div variants={imagesVariant} className="blog-post m-4 max-w-sm">
               <Image
                 width={1000}
                 height={1000}
@@ -214,7 +212,7 @@ const Brands = () => {
           </Link>
           {/* 5 */}
           <Link href="/offers/#fifth">
-            <div variants={imagesVariant} className="blog-post m-4">
+            <div variants={imagesVariant} className="blog-post m-4 max-w-sm">
               <Image
                 width={1000}
                 height={1000}
@@ -238,7 +236,7 @@ const Brands = () => {
           </Link>
           {/* 6 */}
           <Link href="/offers/#sixth">
-            <div variants={imagesVariant} className="blog-post m-4">
+            <div variants={imagesVariant} className="blog-post m-4 max-w-sm">
               <Image
                 width={1000}
                 height={1000}
@@ -282,7 +280,6 @@ const Brands = () => {
             <div style={textContainerStyle} className="flex justify-center ">
               <h1 className="sm:text-4xl text-xl font-bold text-center">
                 Why We Deliver Inspiring Interiors
-                
               </h1>
             </div>
             <Image
@@ -429,6 +426,5 @@ const MobileCarousel = () => {
     </Carousel>
   )
 }
-
 
 export default Brands
