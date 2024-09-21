@@ -7,49 +7,7 @@ import Carousel from 'react-multi-carousel'
 import 'react-multi-carousel/lib/styles.css'
 
 const Brands = () => {
-  // const slides = [
-  //   {
-  //     image:
-  //       'https://source.unsplash.com/gray-2-seat-sofa-near-round-table-WPqcd-gpJeE',
-  //     title: 'AFFORDABLE, YET WHOLESOME',
-  //     description: ' On Top Priority',
-  //   },
-  //   {
-  //     image:
-  //       'https://source.unsplash.com/clear-glass-top-table-with-brown-wooden-base-YAp3j8EcjUo ',
-  //     title: 'POCKET FRIENDLY, YET WELCOMING',
-  //     description: 'Handcrafted for You',
-  //   },
-  //   {
-  //     image:
-  //       'https://source.unsplash.com/a-living-room-with-a-couch-coffee-table-and-potted-plant-Rf0a8n0VV_M',
-  //     title: 'MINIMAL, YET OVERALL COVERAGE',
-  //     description: 'Be Carefree & Happy',
-  //   },
-  //   {
-  //     image:
-  //       'https://source.unsplash.com/a-living-room-filled-with-furniture-and-a-fire-place-CXFt0FGdD58',
-  //     title: 'LUXURY, YET AFFORDABLE',
-  //     description: 'Over the Top',
-  //   },
-  //   {
-  //     image:
-  //       'https://source.unsplash.com/white-wooden-coffee-table-near-white-sofa-WgkA3CSFrjc',
-  //     title: 'HIGH QUALITY WITH COMPLETE COMMITMENT',
-  //     description: 'Premier Plus ',
-  //   },
-  //   /*  {
-  //     img: "https://source.unsplash.com/white-wooden-coffee-table-near-white-sofa-WgkA3CSFrjc",
-  //     title: "HIGH QUALITY WITH COMPLETE COMMITMENT", description: " Premier Plus "
-  //   },
-  //   */
-  //   {
-  //     image:
-  //       'https://source.unsplash.com/black-metal-3-tier-rack-beside-white-couch-L5L2hiSh2Bo ',
-  //     description: 'Redefine Luxury',
-  //     title: ' TOP NOTCH LUXURY, WITH TOP NOTCH PRICING',
-  //   },
-  // ]
+
 
   const imagesVariant = {
     initial: {
@@ -387,7 +345,7 @@ const MobileCarousel = () => {
       slug: '#top-priority',
     },
     {
-      image: '/images/brands/slides2.jpeg ',
+      image: '/images/brands/slides2.jpeg',
       title: 'POCKET FRIENDLY, YET WELCOMING',
       description: 'Handcrafted for You',
       slug: '#top-priority',
