@@ -152,7 +152,7 @@ const Brands = () => {
               <Image
                 width={1000}
                 height={1000}
-                src="/images/hpcards/card2.jpeg "
+                src="/images/hpcards/card2.jpeg"
                 alt="Man"
               />
 
@@ -160,7 +160,7 @@ const Brands = () => {
                 <Image
                   width={1000}
                   height={1000}
-                  src="/images/hpcards/card2.jpeg "
+                  src="/images/hpcards/card2.jpeg"
                   alt=""
                 />
                 <h3 className="post-mini">Handcrafted for You</h3>
@@ -224,7 +224,7 @@ const Brands = () => {
                 <Image
                   width={1000}
                   height={1000}
-                  src="/images/hpcards/card5.jpeg "
+                  src="/images/hpcards/card5.jpeg"
                   alt=""
                 />
                 <h3 className="post-mini"> Premier Plus </h3>
@@ -240,7 +240,7 @@ const Brands = () => {
               <Image
                 width={1000}
                 height={1000}
-                src="/images/hpcards/card6.jpeg "
+                src="/images/hpcards/card6.jpeg"
                 alt="Man"
               />
 
