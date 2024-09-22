@@ -1,5 +1,5 @@
-'use client'
-import { useState, useEffect, useRef } from 'react'
+
+
 import { BioRhyme } from 'next/font/google'
 import './globals.css'
 import { Provider } from 'react-redux'
@@ -29,6 +29,8 @@ const bioRhyme = BioRhyme({
   display: 'swap',
 })
 export const metadata = {
+  title: 'Best Interior Designers Company- Design Indian Homes',
+  description: 'Connect with the best interior and architect brand in Delhi, Gurgaon, Noida & India. We serve the most affordable modular interiors & architectural works.',
   verification: {
     google: 'CAXQdsjhssz1BrLDtJ1LcQKI_53ZXcNZiiojNkcdW-c',
     msvalidate: '9FE8C362BB86815394E53A44789BC3FD',
@@ -37,27 +39,10 @@ export const metadata = {
   metadataBase: new URL('https://designindianhomes.com'),
 }
 export default function RootLayout({ children }) {
-  const [title, setTitle] = useState(
-    `Best Interior Designers Company- Design Indian Homes`
-  )
 
-  useEffect(() => {
-    // Update the document title on mount
-    document.title = title
-  }, [title])
 
   // Reference to the animation canvas
-  const animationCanvasRef = useRef(null)
 
-  // Function to handle mouse move event on the animation canvas
-  const handleMouseMove = (e) => {
-    animationCanvasRef.current.handleMouseMove(e.nativeEvent)
-  }
-
-  // Function to handle mouse out event on the animation canvas
-  const handleMouseOut = (e) => {
-    animationCanvasRef.current.handleMouseOut(e.nativeEvent)
-  }
 
   return (
     <html lang="en">

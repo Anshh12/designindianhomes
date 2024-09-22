@@ -78,8 +78,14 @@ const DesignIdeasDropdownContainer = () => {
         { label: 'Modular Interior Designs', url: '/modular-interiors' },
         { label: 'Interior Design Solutions', url: '/home-interior-designs' },
         { label: 'End to End Interior', url: '/home-interior-services-india' },
-        { label: 'Architectural Designs', url: '/architectural-designs-services-india' },
-        { label: 'Selected Homes', url: '/selected-homes-exclusive-interior-designs-india' },
+        {
+          label: 'Architectural Designs',
+          url: '/architectural-designs-services-india',
+        },
+        {
+          label: 'Selected Homes',
+          url: '/selected-homes-exclusive-interior-designs-india',
+        },
         { label: 'Home Renovation Services', url: '/home-renovation-service' },
         { label: 'Modular Kitchen', url: '/modular-kitchen-top-brand-india' },
         { label: 'Wardrobes', url: '/wardrobe-design-gallery-india' },
@@ -151,8 +157,14 @@ const DesignIdeasDropdownContainer = () => {
       id: 4,
       heading: 'Modular Kitchen',
       links: [
-        { label: 'Types of Modular Kitchen', url: '/modular-kitchen-top-brand-india/types-of-modular-kitchens' },
-        { label: 'Modular Kitchen Designs', url: '/modular-kitchen-top-brand-india/modular-kitchen-designs' },
+        {
+          label: 'Types of Modular Kitchen',
+          url: '/modular-kitchen-top-brand-india/types-of-modular-kitchens',
+        },
+        {
+          label: 'Modular Kitchen Designs',
+          url: '/modular-kitchen-top-brand-india/modular-kitchen-designs',
+        },
         {
           label: 'Luxury Modular Kitchen ',
           url: '/modular-kitchen-top-brand-india/luxury-modular-kitchens',
@@ -161,7 +173,10 @@ const DesignIdeasDropdownContainer = () => {
           label: 'Kitchen Renovation ',
           url: '/modular-kitchen-top-brand-india/kitchen-renovations',
         },
-        { label: 'Get Estimate ', url: '/get-free-estimate-by-top-interior-brand-in-delhi-gurgaon-noida-india' },
+        {
+          label: 'Get Estimate ',
+          url: '/get-free-estimate-by-top-interior-brand-in-delhi-gurgaon-noida-india',
+        },
       ],
     },
     {
@@ -169,8 +184,14 @@ const DesignIdeasDropdownContainer = () => {
       heading: 'Wardrobes',
       links: [
         { label: 'Types of Wardrobes ', url: '/types-of-wardrobe' },
-        { label: 'Luxury Wardrobes', url: '/wardrobe-design-gallery-india/luxury-wardrobes-designs' },
-        { label: 'Wardrobe Designs', url: '/wardrobe-design-gallery-india/wardrobe-designs' },
+        {
+          label: 'Luxury Wardrobes',
+          url: '/wardrobe-design-gallery-india/luxury-wardrobes-designs',
+        },
+        {
+          label: 'Wardrobe Designs',
+          url: '/wardrobe-design-gallery-india/wardrobe-designs',
+        },
         {
           label: 'Lacquer Glass Wardrobe Designs',
           url: '/wardrobe-design-gallery-india/lacquer-glass-wardrobe-designs',
@@ -186,19 +207,24 @@ const DesignIdeasDropdownContainer = () => {
       heading: 'Modular Interior',
       links: [
         { label: 'Mandir', url: '/modular-interiors/mandir' },
-        { label: 'Chest of Drawers', url: '/modular-interiors/chest-of-drawers' },
+        {
+          label: 'Chest of Drawers',
+          url: '/modular-interiors/chest-of-drawers',
+        },
         { label: 'Bar Units', url: '/modular-interiors/bar-units' },
         { label: 'Side Tables', url: '/modular-interiors/side-tables' },
         { label: 'Foldable Beds ', url: '/modular-interiors/foldable-beds' },
         { label: 'Foyer Cabinets ', url: '/modular-interiors/foyer-cabinets' },
-        { label: 'Bathroom Vanities ', url: '/modular-interiors/bathroom-vanities' },
+        {
+          label: 'Bathroom Vanities ',
+          url: '/modular-interiors/bathroom-vanities',
+        },
         { label: 'Modular Kitchen', url: '/modular-kitchen-top-brand-india' },
         { label: 'Wardrobe', url: '/modular-interiors/wardrobe' },
         { label: 'Dresser', url: '/modular-interiors/dressers' },
         { label: 'TV Units', url: '/modular-interiors/tv-unit-designs' },
         { label: 'Crockery Units', url: '/modular-interiors/crockery-units' },
         { label: 'Homes by DIH', url: '/homes-by-design-indian-homes' },
-
       ],
     },
     // Add data for other dropdowns
@@ -424,32 +450,31 @@ export class Footer extends Component {
   render() {
     return (
       <>
-       <div className="bg-red-500 p-4 dark:text-white">
-       <MyForm/>
-      </div>
-      <PostFooter/>
-      <div className="flex justify-center w-full mx-0">
-        <div className="gradient w-full flex flex-col justify-center items-center">
-          <div className="mt-22 container">
-            {/* <WaveGradient /> */}
-            <div
-              className="flex flex-col items-center justify-center bg-cover rounded-lg mb-12 h-[40vh] sm:h-[10vh] md:h-[100vh] h-1/2"
-              style={{
-                backgroundImage:
-                  "url('/images/get-free-estimate.jpg')",
-                backgroundSize: 'fit',
-                backgroundRepeat: 'no-repeat',
-                objectFit: 'cover',
-              }}
-            >
-              <div className="relative  m-16">
-                <Link href="/get-free-estimate-by-top-interior-brand-in-delhi-gurgaon-noida-india">
-                  <h1 className="text-sm md:text-8xl font-bold text-center bg-white bg-opacity-50 p-4 rounded-full">
-                    Get Your Estimates Free
-                  </h1>
-                </Link>
-              </div>
-              {/* <h1 className="text-md md:text-xl sm:my-4 text-center sm:p-4 bg-white rounded-md">
+        <div className="bg-red-500 p-4 dark:text-white">
+          <MyForm />
+        </div>
+        <PostFooter />
+        <div className="flex justify-center w-full mx-0">
+          <div className="gradient w-full flex flex-col justify-center items-center">
+            <div className="mt-22 container">
+              {/* <WaveGradient /> */}
+              <div
+                className="flex flex-col items-center justify-center bg-cover rounded-lg mb-12 h-[40vh] sm:h-[10vh] md:h-[100vh] h-1/2"
+                style={{
+                  backgroundImage: "url('/images/get-free-estimate.jpg')",
+                  backgroundSize: 'fit',
+                  backgroundRepeat: 'no-repeat',
+                  objectFit: 'cover',
+                }}
+              >
+                <div className="relative  m-16">
+                  <Link href="/get-free-estimate-by-top-interior-brand-in-delhi-gurgaon-noida-india">
+                    <h1 className="text-sm md:text-8xl font-bold text-center bg-white bg-opacity-50 p-4 rounded-full">
+                      Get Your Estimates Free
+                    </h1>
+                  </Link>
+                </div>
+                {/* <h1 className="text-md md:text-xl sm:my-4 text-center sm:p-4 bg-white rounded-md">
                 LOVE ALL SERVER ALL
               </h1> */}
               </div>

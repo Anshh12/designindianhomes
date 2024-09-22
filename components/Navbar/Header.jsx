@@ -72,44 +72,74 @@ const Header = () => {
   const getImageForItem = (item) => {
     const imageMapping = {
       //interior
-      ' 1bhk':'/images/interiors/bebeautiful-designs-for-1bhk-flats-interiors-residences-in-delhi-gurgaon-noida-india (1).jpeg',
-      '2bhk': '/images/interiors/2bhk-2-bedroom-interior-designing-cost-price-makeover-redesigning-services-in-delhi-gurgaon-noida-india (1).jpg',
-      '3bhk':  '/images/interiors/3-bhk-best-interior-design-ideas-in-delhi-gurgaon-noida-india (1).jpg',
-      '4bhk': '/images/interiors/amazing-4bhk-designs-4-bedrooms-for-interiors-designing-ideas-in-delhi-gurgaon-noida-india (7).jpg',
-      farmhouse: '/images/interiors/beautiful-farmhouses-designs-interiors-in-delhi-gurgaon-noida-faridabad-india (1).jpeg',
+      ' 1bhk':
+        '/images/interiors/bebeautiful-designs-for-1bhk-flats-interiors-residences-in-delhi-gurgaon-noida-india (1).jpeg',
+      '2bhk':
+        '/images/interiors/2bhk-2-bedroom-interior-designing-cost-price-makeover-redesigning-services-in-delhi-gurgaon-noida-india (1).jpg',
+      '3bhk':
+        '/images/interiors/3-bhk-best-interior-design-ideas-in-delhi-gurgaon-noida-india (1).jpg',
+      '4bhk':
+        '/images/interiors/amazing-4bhk-designs-4-bedrooms-for-interiors-designing-ideas-in-delhi-gurgaon-noida-india (7).jpg',
+      farmhouse:
+        '/images/interiors/beautiful-farmhouses-designs-interiors-in-delhi-gurgaon-noida-faridabad-india (1).jpeg',
       pent: '/images/interiors/beautiful-elegant-pent-house-designs-ideas-concepts-apartments-flats-interior-design-ideas-in-delhi-gurgaon-noida-india (1).jpeg',
-      office:  '/images/interiors/best-residential-office-designs-in-budget-interiors-in-delhi-gurgaon-noida-india (1).jpg',
-      studio: '/images/interiors/beautiful-interior-designs-renovations-for-studio-apartments-in-delhi-gurgaon-noida-india (1).jpeg',
-      bunglow:  '/images/interiors/amazing-bunglow-designing-ideas-concepts-architectural-services-in-delhi-gurgaon-noida-india (1).jpeg',
-      duplex: '/images/interiors/amazing-beautiful-designs-interiors-gallery-collection-pictures-for-duplex-flats-residences-apartments-in-delhi-gurgaon-noida-india (1).jpg',
-      cottage:'/images/interiors/cottage-interiors-top-interior-architectural-brand-in-delhi-gurgaon-noida-india (4).jpg',
-      villa: '/images/interiors/best - interior - design - ideas - for  - villa - in - delhi - gurgaon - noida - faridabad.jpg',
-
+      office:
+        '/images/interiors/best-residential-office-designs-in-budget-interiors-in-delhi-gurgaon-noida-india (1).jpg',
+      studio:
+        '/images/interiors/beautiful-interior-designs-renovations-for-studio-apartments-in-delhi-gurgaon-noida-india (1).jpeg',
+      bunglow:
+        '/images/interiors/amazing-bunglow-designing-ideas-concepts-architectural-services-in-delhi-gurgaon-noida-india (1).jpeg',
+      duplex:
+        '/images/interiors/amazing-beautiful-designs-interiors-gallery-collection-pictures-for-duplex-flats-residences-apartments-in-delhi-gurgaon-noida-india (1).jpg',
+      cottage:
+        '/images/interiors/cottage-interiors-top-interior-architectural-brand-in-delhi-gurgaon-noida-india (4).jpg',
+      villa:
+        '/images/interiors/best - interior - design - ideas - for  - villa - in - delhi - gurgaon - noida - faridabad.jpg',
 
       //end to end interior
-      bathroom: '/images/end-to-end-interior/bathroom-designs-in-delhi-gurgaon-noida-india (5).jpg',
-      verticalGarden: '/images/end-to-end-interior/beautiful-verticle-gardens-designs-collection-dealers-in-delhi-gurgaon-noida-india (1).jpg',
-      wallPanneling: '/images/end-to-end-interior/beautiful-wall-panelling-designs-gallery-in-delhi-gurgaon-noida-india (5).jpg',
-      woodenFlooring: '/images/end-to-end-interior/best-designs-of-wooden-floorings-in-delhi-gurgaon-noida-india (1).jpg',
+      bathroom:
+        '/images/end-to-end-interior/bathroom-designs-in-delhi-gurgaon-noida-india (5).jpg',
+      verticalGarden:
+        '/images/end-to-end-interior/beautiful-verticle-gardens-designs-collection-dealers-in-delhi-gurgaon-noida-india (1).jpg',
+      wallPanneling:
+        '/images/end-to-end-interior/beautiful-wall-panelling-designs-gallery-in-delhi-gurgaon-noida-india (5).jpg',
+      woodenFlooring:
+        '/images/end-to-end-interior/best-designs-of-wooden-floorings-in-delhi-gurgaon-noida-india (1).jpg',
       door: '/images/end-to-end-interior/best-doors-manufacturers-dealers-suppliers-in-delhi-gurgaon-noida-india (8).jpg',
-      foyer: '/images/end-to-end-interior/best-foyer-area-renovation-decoration-in-delhi-gurgaon-noida-india (6).jpg',
-      plumbing: '/images/end-to-end-interior/best-plumbing-works-contractors-in-delhi-gurgaon-noida-india (7).jpg',
-      woodenCeiling: '/images/end-to-end-interior/best-wooden-false-ceiling-designs-in-2024-delhi-gurgaon-noida-india (1).jpeg',
-      woodenPolishing: '/images/end-to-end-interior/best-wooden-polishing-works-services-in-delhi-gurgaon-noida-india (1).jpg',
-      bedDesigning: '/images/end-to-end-interior/collection-of-beds-designs-delhi-gurgaon-noida-india (1).jpeg',
-      commercialServices: '/images/end-to-end-interior/commercial-architects-designs-delhi-gurgaon-noida-india (1).jpg',
-      kitchenLighting: '/images/end-to-end-interior/contemporary-kitchen-living-space-herts-sue-murphy-interiors-img~4711f67a055b320a_14-4529-1-5e01505.jpg',
-      glassPartion:'/images/end-to-end-interior/designer-glass-partitions-dealers-in-delhi-gurgaon-noida-india (6).jpg',
-      exteriorCladding: '/images/end-to-end-interior/exterior-cladding-designs-in-delhi-gurgaon-noida-india (6).jpg',
-      painting: '/images/end-to-end-interior/exterior-interior-painting-services-in-delhi-gurgaon-noida-india (3).jpg',
-      floorTilling: '/images/end-to-end-interior/floor-tiles-dealers-installers-in-delhi-gurgaon-noida-india (3).jpg',
-      endtoend: '/images/end-to-end-interior/largest-luxury-interior-designs-ideas-gallery-pictures-in-delhi-gurgaon-noida-india.webp',
+      foyer:
+        '/images/end-to-end-interior/best-foyer-area-renovation-decoration-in-delhi-gurgaon-noida-india (6).jpg',
+      plumbing:
+        '/images/end-to-end-interior/best-plumbing-works-contractors-in-delhi-gurgaon-noida-india (7).jpg',
+      woodenCeiling:
+        '/images/end-to-end-interior/best-wooden-false-ceiling-designs-in-2024-delhi-gurgaon-noida-india (1).jpeg',
+      woodenPolishing:
+        '/images/end-to-end-interior/best-wooden-polishing-works-services-in-delhi-gurgaon-noida-india (1).jpg',
+      bedDesigning:
+        '/images/end-to-end-interior/collection-of-beds-designs-delhi-gurgaon-noida-india (1).jpeg',
+      commercialServices:
+        '/images/end-to-end-interior/commercial-architects-designs-delhi-gurgaon-noida-india (1).jpg',
+      kitchenLighting:
+        '/images/end-to-end-interior/contemporary-kitchen-living-space-herts-sue-murphy-interiors-img~4711f67a055b320a_14-4529-1-5e01505.jpg',
+      glassPartion:
+        '/images/end-to-end-interior/designer-glass-partitions-dealers-in-delhi-gurgaon-noida-india (6).jpg',
+      exteriorCladding:
+        '/images/end-to-end-interior/exterior-cladding-designs-in-delhi-gurgaon-noida-india (6).jpg',
+      painting:
+        '/images/end-to-end-interior/exterior-interior-painting-services-in-delhi-gurgaon-noida-india (3).jpg',
+      floorTilling:
+        '/images/end-to-end-interior/floor-tiles-dealers-installers-in-delhi-gurgaon-noida-india (3).jpg',
+      endtoend:
+        '/images/end-to-end-interior/largest-luxury-interior-designs-ideas-gallery-pictures-in-delhi-gurgaon-noida-india.webp',
       upvc: '/images/end-to-end-interior/largest-UPVC-doors-windows-dealers-manufacturers-delhi-gurgaon-noida-india (1).jpg',
       sofa: '/images/end-to-end-interior/lowest-price-sofa-designs-in-delhi-gurgaon-noida-india (6).jpg',
-      tvunits: "/images/end-to-end-interior/tv-units-dealers-and-manufacturers-in-delhi-gurgaon-noida-india (1).jpg",
-      electricalServices: '/images/end-to-end-interior/best-redoing-electric-works-company-in-delhi-gurgaon-noida-india (3).jpg',
-      shoesRack: '/images/end-to-end-interior/top-shoeracks-dealers-manufacturers-in-delhi-gurgaon-noida-india (4).jpg',
-      vanities: '/images/end-to-end-interior/bathroom-vanities-dealers-and-manufacturers-in-delhi-gurgaon-noida-india (5).jpg',
+      tvunits:
+        '/images/end-to-end-interior/tv-units-dealers-and-manufacturers-in-delhi-gurgaon-noida-india (1).jpg',
+      electricalServices:
+        '/images/end-to-end-interior/best-redoing-electric-works-company-in-delhi-gurgaon-noida-india (3).jpg',
+      shoesRack:
+        '/images/end-to-end-interior/top-shoeracks-dealers-manufacturers-in-delhi-gurgaon-noida-india (4).jpg',
+      vanities:
+        '/images/end-to-end-interior/bathroom-vanities-dealers-and-manufacturers-in-delhi-gurgaon-noida-india (5).jpg',
       //renovation
       structural:
         '/images/renovation/complete-building-structures-end-to-end-builders-developers-in-delhi-gurgaon-noida-india (6).jpg',
@@ -236,9 +266,9 @@ const Header = () => {
         <div>
           <ul className="text-sm">
             <Link href="/home-interior-designs">
-            <h3 className="text-lg font-bold text-black">
-              Types of Interior Design Ideas
-            </h3>
+              <h3 className="text-lg font-bold text-black">
+                Types of Interior Design Ideas
+              </h3>
             </Link>
             <Link href="/1bhk-apartment-interior-designs">
               {' '}
@@ -340,8 +370,8 @@ const Header = () => {
         <div className="">
           <ul className="text-xs">
             <h3 className="text-lg font-bold text-black">
-             <Link href="/home-interior-services-india">
-              End to End Interior
+              <Link href="/home-interior-services-india">
+                End to End Interior
               </Link>
             </h3>
             <Link href="/home-interior-services-india/bed-designs-dealers-manufacturers-india">
@@ -350,14 +380,14 @@ const Header = () => {
               </li>{' '}
             </Link>
             <Link href="/home-interior-services-india/ceiling-design-ideas-inspiration-india">
-              <li
-                onMouseOver={() => handleMouseOverImage('woodenCeiling')}
-              >
+              <li onMouseOver={() => handleMouseOverImage('woodenCeiling')}>
                 Ceiling Designs
               </li>{' '}
             </Link>
             <Link href="/home-interior-services-india/commercial-interiors-services-delhi-ncr-india">
-              <li onMouseOver={() => handleMouseOverImage('commercialServices')}>
+              <li
+                onMouseOver={() => handleMouseOverImage('commercialServices')}
+              >
                 Commercial Services
               </li>{' '}
             </Link>
@@ -387,9 +417,7 @@ const Header = () => {
               </li>{' '}
             </Link>
             <Link href="/home-interior-services-india/exterior-cladding-design-ideas">
-              <li
-                onMouseOver={() => handleMouseOverImage('exteriorCladding')}
-              >
+              <li onMouseOver={() => handleMouseOverImage('exteriorCladding')}>
                 Exterior Cladding
               </li>{' '}
             </Link>
@@ -451,26 +479,24 @@ const Header = () => {
               </li>{' '}
             </Link>
             <button className="bg-red-600 text-white text-m py-3 px-6 rounded-full mt-2">
-            <Link href="/selected-homes-exclusive-interior-designs-india">
-             Selected Home
-            </Link>
-          </button>
+              <Link href="/selected-homes-exclusive-interior-designs-india">
+                Selected Home
+              </Link>
+            </button>
           </ul>
         </div>
         <div className="">
           <ul className="text-xs">
             <Link href="/modular-interiors">
-            <h3 className="text-lg font-bold text-black">Modular Interiors</h3>
+              <h3 className="text-lg font-bold text-black">
+                Modular Interiors
+              </h3>
             </Link>
             <Link href="/modular-interiors/mandir">
-              <li onMouseOver={() => handleMouseOverImage('mandir')}>
-                Mandir
-              </li>{' '}
+              <li onMouseOver={() => handleMouseOverImage('mandir')}>Mandir</li>{' '}
             </Link>
             <Link href="/modular-interiors/bar-unit">
-              <li
-                onMouseOver={() => handleMouseOverImage('bar_unit')}
-              >
+              <li onMouseOver={() => handleMouseOverImage('bar_unit')}>
                 Bar Units
               </li>{' '}
             </Link>
@@ -500,14 +526,14 @@ const Header = () => {
               </li>{' '}
             </Link>
             <Link href="/modular-interiors/wardrobe">
-              <li onMouseOver={() => handleMouseOverImage('wardrobe_renovation')}>
+              <li
+                onMouseOver={() => handleMouseOverImage('wardrobe_renovation')}
+              >
                 Wardrobes
               </li>{' '}
             </Link>
             <Link href="/modular-interiors/dressers">
-              <li
-                onMouseOver={() => handleMouseOverImage('dressing')}
-              >
+              <li onMouseOver={() => handleMouseOverImage('dressing')}>
                 Dressers
               </li>{' '}
             </Link>
@@ -527,18 +553,20 @@ const Header = () => {
               </li>{' '}
             </Link>
             <Link href="/modular-interiors/glass-partition">
-              <li
-                onMouseOver={() => handleMouseOverImage('glass_partition')}
-              >
+              <li onMouseOver={() => handleMouseOverImage('glass_partition')}>
                 Glass Partitions
               </li>{' '}
             </Link>
 
             <Link href="/modular-interiors/vanities">
-              <li onMouseOver={() => handleMouseOverImage('vanities')}>Vanities</li>{' '}
+              <li onMouseOver={() => handleMouseOverImage('vanities')}>
+                Vanities
+              </li>{' '}
             </Link>
             <Link href="/modular-interiors/shoes-rack">
-              <li onMouseOver={() => handleMouseOverImage('shoesRack')}>Shoes Rack</li>{' '}
+              <li onMouseOver={() => handleMouseOverImage('shoesRack')}>
+                Shoes Rack
+              </li>{' '}
             </Link>
             <Link href="/homes-by-design-indian-homes">
               <li onMouseOver={() => handleMouseOverImage('hotel')}>
@@ -546,10 +574,10 @@ const Header = () => {
               </li>{' '}
             </Link>
             <button className="bg-red-600 text-white text-m py-3 px-6 rounded-full mt-2">
-            <Link href="/luxury-residence-designs-delhi-india">
-             Luxury Interiors
-            </Link>
-          </button>
+              <Link href="/luxury-residence-designs-delhi-india">
+                Luxury Interiors
+              </Link>
+            </button>
           </ul>
         </div>
         <div className="center">
@@ -612,10 +640,9 @@ const Header = () => {
               </button>
               <button className="bg-red-600 text-white text-sm py-3 px-6 rounded-full w-52">
                 <Link href="/luxury-residence-designs-delhi-india">
-                 Luxury Interiors
+                  Luxury Interiors
                 </Link>
-              </button>
-              {' '}
+              </button>{' '}
             </div>
           </div>
         </div>
@@ -810,10 +837,9 @@ const Header = () => {
               </button>
               <button className="bg-red-600 text-white text-sm py-3 px-6 rounded-full w-52">
                 <Link href="/luxury-residence-designs-delhi-india">
-                 Luxury Interiors
+                  Luxury Interiors
                 </Link>
-              </button>
-              {' '}
+              </button>{' '}
             </div>
           </div>
         </div>
@@ -934,7 +960,7 @@ const Header = () => {
                       className="w-fit font-extrabold bg-black text-white center p-2 text-xs"
                       onMouseOver={() => handleMouseOverImage('renovations')}
                     >
-                    Shutter Finish
+                      Shutter Finish
                     </h3>
                   </Link>
                   <p className="text-xs text-black">
@@ -1006,10 +1032,9 @@ const Header = () => {
               </button>
               <button className="bg-red-600 text-white text-sm py-3 px-6 rounded-full w-52">
                 <Link href="/luxury-residence-designs-delhi-india">
-                 Luxury Interiors
+                  Luxury Interiors
                 </Link>
-              </button>
-              {' '}
+              </button>{' '}
             </div>
           </div>
         </div>
@@ -1412,10 +1437,9 @@ const Header = () => {
               </button>
               <button className="bg-red-600 text-white text-sm py-3 px-6 rounded-full w-52">
                 <Link href="/luxury-residence-designs-delhi-india">
-                 Luxury Interiors
+                  Luxury Interiors
                 </Link>
-              </button>
-              {' '}
+              </button>{' '}
             </div>
           </div>
         </div>
@@ -1482,9 +1506,7 @@ const Header = () => {
                   className=" rounded-lg"
                 />
                 <div>
-                  <Link
-                    href="/modular-interiors/bar-units-designs"
-                  >
+                  <Link href="/modular-interiors/bar-units-designs">
                     <h3
                       className="text-sm font-extrabold absolute px-2 py-1  text-white bg-black"
                       onMouseOver={() => handleMouseOverImage('bar_unit')}
@@ -1694,9 +1716,7 @@ const Header = () => {
                   className=" rounded-lg"
                 />
                 <div>
-                  <Link
-                    href="/modular-interiors/wardrobe-designs"
-                  >
+                  <Link href="/modular-interiors/wardrobe-designs">
                     <h3
                       className="text-sm font-extrabold absolute px-2 py-1  text-white bg-black"
                       onMouseOver={() => handleMouseOverImage('bar_unit')}
@@ -1896,16 +1916,15 @@ const Header = () => {
               </Link>
             </button>
             <button className="bg-red-600 text-white text-sm py-3 px-6 rounded-full w-52">
-                <Link href="/get-free-estimate-by-top-interior-brand-in-delhi-gurgaon-noida-india">
-                  Get Free Estimate
-                </Link>
-              </button>
-              <button className="bg-red-600 text-white text-sm py-3 px-6 rounded-full w-52">
-                <Link href="/luxury-residence-designs-delhi-india">
-                 Luxury Interiors
-                </Link>
-              </button>
-            {' '}
+              <Link href="/get-free-estimate-by-top-interior-brand-in-delhi-gurgaon-noida-india">
+                Get Free Estimate
+              </Link>
+            </button>
+            <button className="bg-red-600 text-white text-sm py-3 px-6 rounded-full w-52">
+              <Link href="/luxury-residence-designs-delhi-india">
+                Luxury Interiors
+              </Link>
+            </button>{' '}
           </div>
         </div>
         <div className="w-2/3">
@@ -2046,8 +2065,9 @@ const Header = () => {
       <div className="z-[200] invisible lg:visible  lg:flex">
         {/* Desktop Header */}
         <div
-          className={`bg-white py-0 drop-shadow-lg  mb-px w-full z-50 transition-transform ease-in-out duration-300 ${scrollDirection === 'down' ? '-translate-y-10' : 'translate-y-0'
-            }`}
+          className={`bg-white py-0 drop-shadow-lg  mb-px w-full z-50 transition-transform ease-in-out duration-300 ${
+            scrollDirection === 'down' ? '-translate-y-10' : 'translate-y-0'
+          }`}
           style={{
             position: 'fixed',
             top: 30,
@@ -2084,7 +2104,7 @@ const Header = () => {
                 <FontAwesomeIcon
                   icon={faPhone}
                   className="text-sm text-black mt-[6px]"
-                 style={{width: '24px', height: '24px'}}
+                  style={{ width: '24px', height: '24px' }}
                 />{' '}
                 <a
                   className="text-sm text-black font-bold mt-2"
@@ -2112,30 +2132,23 @@ const Header = () => {
                 </p>
               </div>
               <div className="flex gap-1 py-1">
-                <a
+                <SocialIcon
                   href="https://www.instagram.com/designindiankitchen/?hl=en"
-                  target="_blank"
-                >
-                  <SocialIcon
-                    network="instagram"
-                    style={{ width: '1.5rem', height: '1.5rem' }}
-                  />
-                </a>
-                <a
+                  network="instagram"
+                  style={{ width: '1.5rem', height: '1.5rem' }}
+                />
+
+                <SocialIcon
                   href="https://www.youtube.com/channel/UCqkIRwI6EL9QmaTZHYm6Hug"
-                  target="_blank"
-                >
-                  <SocialIcon
-                    network="youtube"
-                    style={{ width: '1.5rem', height: '1.5rem' }}
-                  />
-                </a>
-                <a href="https://wa.me/+919899264978" target="_blank">
-                  <SocialIcon
-                    network="whatsapp"
-                    style={{ width: '1.5rem', height: '1.5rem' }}
-                  />
-                </a>
+                  network="youtube"
+                  style={{ width: '1.5rem', height: '1.5rem' }}
+                />
+
+                <SocialIcon
+                  href="https://wa.me/+919899264978"
+                  network="whatsapp"
+                  style={{ width: '1.5rem', height: '1.5rem' }}
+                />
 
                 {/* <ThemeSwitcher /> */}
               </div>
