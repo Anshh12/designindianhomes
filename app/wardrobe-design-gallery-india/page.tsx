@@ -9,9 +9,32 @@ import ProgressBar from '../../components/Progressbar'
 // import Card from './Card'
 import MyForm from '../../components/MyForm'
 import Omsairam from '../../components/Navbar/Omsairam'
-
+import Script from 'next/script'
 import Image from 'next/image'
 const Page = ({}) => {
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      {
+        '@type': 'ListItem',
+        position: 1,
+        item: {
+          '@id': 'https://www.modularkitchenindelhi.com/',
+          name: 'Home',
+        },
+      },
+      {
+        '@type': 'ListItem',
+        position: 2,
+        item: {
+          '@id': 'https://designindianhomes.com/wardrobe-design-gallery-india/',
+          name: 'Wardrobe Design Gallery',
+        },
+      },
+    ],
+  }
+
   const [categoryDataArray, setCategoryDataArray] = useState<any[]>([])
 
   const categoryFolderMapping: Record<number, string> = {
@@ -28,7 +51,7 @@ const Page = ({}) => {
     const fetchCategoryData = async () => {
       try {
         const timestamp = Date.now()
-        const categoryIds = [ 95, 96, 97, 98] // Add the category IDs you want to fetch
+        const categoryIds = [95, 96, 97, 98] // Add the category IDs you want to fetch
 
         // Fetch category data
         const categoryPromises = categoryIds.map(async (categoryId) => {
@@ -90,8 +113,8 @@ const Page = ({}) => {
   }, []) // Empty dependency array to run the effect only once on mount
   const handleImageLoad = () => {
     // After the image is loaded, scroll back to the top of the page
-    window.scrollTo(0, 0);
-  };
+    window.scrollTo(0, 0)
+  }
   const [title, setTitle] = useState(
     'Wardrobes | Modular Kitchens & Wardrobe Brand India'
   )
@@ -102,6 +125,11 @@ const Page = ({}) => {
   }, [title])
   return (
     <>
+      <Script
+        id="jsonld"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      ></Script>
       <ProgressBar />
       <Header />
       <Omsairam />
@@ -174,32 +202,27 @@ const Page = ({}) => {
         </p>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 px-7 mt-16">
-        <div
-              className="bg-white rounded-md shadow-md p-6">
-             <Link href='/types-of-wardrobe'>
-                  <Image
-          
-                    alt='types of wardrobe'
-                    height={1000}
-                    width={1000}
-                    onLoad={handleImageLoad}
-                    src="/images/wardrobe/larg/complete-modular-kitchens-wardrobe-renovation-services-in-delhi-gurgaon-noida-india (7).jpg"
-                    style={{
-                      width: '450px',
-                      height: '230px',
-                      borderRadius: '10px',
-                    }}
-                  />
-                  
-           
-              <h2 className="text-xl font-semibold mb-4">
-               Types of Wardrobe
-              </h2>
+          <div className="bg-white rounded-md shadow-md p-6">
+            <Link href="/types-of-wardrobe">
+              <Image
+                alt="types of wardrobe"
+                height={1000}
+                width={1000}
+                onLoad={handleImageLoad}
+                src="/images/wardrobe/larg/complete-modular-kitchens-wardrobe-renovation-services-in-delhi-gurgaon-noida-india (7).jpg"
+                style={{
+                  width: '450px',
+                  height: '230px',
+                  borderRadius: '10px',
+                }}
+              />
+
+              <h2 className="text-xl font-semibold mb-4">Types of Wardrobe</h2>
               <p className="text-gray-700 mb-4">
-               Best wardrobe designs in Delhi, Gurgaon, Noida, Faridabad india
+                Best wardrobe designs in Delhi, Gurgaon, Noida, Faridabad india
               </p>
-              </Link>
-            </div>
+            </Link>
+          </div>
           {categoryDataArray.map((categoryData) => (
             <div
               key={categoryData.id}
@@ -231,10 +254,7 @@ const Page = ({}) => {
               <p className="text-gray-700 mb-4">{categoryData.description}</p>
             </div>
           ))}
-
-
         </div>
-       
       </div>
 
       <Footer />

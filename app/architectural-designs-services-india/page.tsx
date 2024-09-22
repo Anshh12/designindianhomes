@@ -4,13 +4,64 @@ import React, { useState, useEffect } from 'react'
 import Header from '../../components/Navbar/Header'
 import Footer from '../../components/Footer/Footer'
 import Link from 'next/link'
-
+import Script from 'next/script'
 import ProgressBar from '../../components/Progressbar'
 // import Card from './Card'
 import MyForm from '../../components/MyForm'
 import Omsairam from '../../components/Navbar/Omsairam'
 import Image from 'next/image'
 const Page = ({}) => {
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'Service',
+    serviceType: 'Architectural Design Services',
+    provider: {
+      '@type': 'Organization',
+      name: 'Design Indian Homes',
+      url: 'https://designindianhomes.com/',
+      logo: 'https://www.designindianhomes.com/images/Logo.gif',
+      description:
+        'Design Indian Homes offers professional architectural design services in India. From concept planning to project execution, we provide customized architectural solutions tailored to your needs.',
+      contactPoint: {
+        '@type': 'ContactPoint',
+        telephone: '+91-9899264978',
+        contactType: 'Customer Service',
+        areaServed: 'IN',
+        availableLanguage: ['en', 'hi'],
+      },
+      address: {
+        '@type': 'PostalAddress',
+        streetAddress: '123 Design Street',
+        addressLocality: 'New Delhi',
+        addressRegion: 'DL',
+        postalCode: '110001',
+        addressCountry: 'IN',
+      },
+    },
+    offers: {
+      '@type': 'Offer',
+      url: 'https://designindianhomes.com/architectural-designs-services-india',
+      priceCurrency: 'INR',
+      price: 'Contact for pricing',
+      availability: 'http://schema.org/InStock',
+      validFrom: '2024-09-21',
+    },
+    areaServed: {
+      '@type': 'Place',
+      name: 'India',
+    },
+    category: 'Architectural Services',
+    potentialAction: {
+      '@type': 'Action',
+      name: 'Book Architectural Consultation',
+      target: {
+        '@type': 'EntryPoint',
+        urlTemplate:
+          'https://designindianhomes.com/book-architectural-consultation',
+      },
+    },
+  }
+
   const [categoryDataArray, setCategoryDataArray] = useState<any[]>([])
   const categoryFolderMapping: Record<number, string> = {
     41: 'architectural-consultancy',
@@ -87,10 +138,15 @@ const Page = ({}) => {
 
   const handleImageLoad = () => {
     // After the image is loaded, scroll back to the top of the page
-    window.scrollTo(0, 0);
-  };
+    window.scrollTo(0, 0)
+  }
   return (
     <>
+      <Script
+        id="jsonld"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      ></Script>
       <ProgressBar />
       <Header />
       <Omsairam />
@@ -107,7 +163,16 @@ const Page = ({}) => {
           <h1 className="text-3xl font-bold">Architectural Designs</h1>
         </div>
         <p className="text-gray-700 text-sm px-7">
-        At the Design Indian Homes, we provide you dedicated Certified Architects working on all your projects. Whether it is just design and planning, or planning your MEP, or designing an elevation or any commercial designing services, Our Team is there to provide you thorough support on any type of architectural service. We provide mostly all types of Architectural Services, some of our exclusive architectural services include Civil Estimation, Design and Planning, Surveying, Estimating Services, Civil Structural Consultancy and Changes in Existing Structures. Connect with the Top Architectural Brand, serving across New Delhi - NCR Today.
+          At the Design Indian Homes, we provide you dedicated Certified
+          Architects working on all your projects. Whether it is just design and
+          planning, or planning your MEP, or designing an elevation or any
+          commercial designing services, Our Team is there to provide you
+          thorough support on any type of architectural service. We provide
+          mostly all types of Architectural Services, some of our exclusive
+          architectural services include Civil Estimation, Design and Planning,
+          Surveying, Estimating Services, Civil Structural Consultancy and
+          Changes in Existing Structures. Connect with the Top Architectural
+          Brand, serving across New Delhi - NCR Today.
         </p>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 px-7 mt-16">

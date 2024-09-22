@@ -7,15 +7,35 @@ import { SpaceProvider } from './SpaceContext'
 import { ThemeProvider } from './themeContext'
 import store from '../components/redux/store'
 import Script from 'next/script'
-import Head from 'next/head'
-import Animation from './animation/page'
-
+import { GoogleTagManager } from '@next/third-parties/google'
+// <head>
+//   <link rel="icon" href="/favicon.ico" sizes="any" />
+//   <meta name="msvalidate.01" content="9FE8C362BB86815394E53A44789BC3FD" />
+//   <meta
+//     name="google-site-verification"
+//     content="CAXQdsjhssz1BrLDtJ1LcQKI_53ZXcNZiiojNkcdW-c"
+//   />
+// </head>
+// <Script id="google-tag-manager">
+//   {`(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+// new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+// j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+// 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+// })(window,document,'script','dataLayer','GTM-P8VK2BRK');`}
+// </Script>
 const bioRhyme = BioRhyme({
   weight: '400',
   subsets: ['latin'],
   display: 'swap',
 })
-
+export const metadata = {
+  verification: {
+    google: 'CAXQdsjhssz1BrLDtJ1LcQKI_53ZXcNZiiojNkcdW-c',
+    msvalidate: '9FE8C362BB86815394E53A44789BC3FD',
+  },
+  favicon: '/favicon.ico',
+  metadataBase: new URL('https://designindianhomes.com'),
+}
 export default function RootLayout({ children }) {
   const [title, setTitle] = useState(
     `Best Interior Designers Company- Design Indian Homes`
@@ -41,21 +61,8 @@ export default function RootLayout({ children }) {
 
   return (
     <html lang="en">
-      <Head>
-        <link rel="icon" href="/favicon.ico" sizes="any" />
-        <meta name="msvalidate.01" content="9FE8C362BB86815394E53A44789BC3FD" />
-        <meta
-          name="google-site-verification"
-          content="CAXQdsjhssz1BrLDtJ1LcQKI_53ZXcNZiiojNkcdW-c"
-        />
-      </Head>
-      <Script id="google-tag-manager">
-        {`(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-P8VK2BRK');`}
-      </Script>
+      <GoogleTagManager gtmId="GTM-P8VK2BRK" />
+
       <Script strategy="lazyOnLoad" id="hotjar">
         {`
           (function(h,o,t,j,a,r){

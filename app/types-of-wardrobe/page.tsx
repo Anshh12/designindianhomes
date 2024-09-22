@@ -10,6 +10,7 @@ import MyForm from '../../components/MyForm'
 import Omsairam from '../../components/Navbar/Omsairam'
 import Image from 'next/image'
 const Page = ({}) => {
+  
   const [categoryDataArray, setCategoryDataArray] = useState<any[]>([])
   const categoryFolderMapping: Record<number, string> = {
     126: '2-door-sliding-wardrobe-designs',

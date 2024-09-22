@@ -9,7 +9,60 @@ import ProgressBar from '../../components/Progressbar'
 import MyForm from '../../components/MyForm'
 import Omsairam from '../../components/Navbar/Omsairam'
 import Image from 'next/image'
+import Script from 'next/script'
+import Head from 'next/head'
 const Page = ({}) => {
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'Service',
+    serviceType: 'Modular Interior Design and Installation',
+    provider: {
+      '@type': 'Organization',
+      name: 'Design Indian Homes',
+      url: 'https://designindianhomes.com/',
+      logo: 'https://www.designindianhomes.com/images/Logo.gif',
+      description:
+        'Our brand is the largest manufacturers of modular interiors, we are top dealers for modular kitchens, wardrobes across Delhi, Gurgaon, Noida & India.',
+      contactPoint: {
+        '@type': 'ContactPoint',
+        telephone: '+91-9899264978',
+        contactType: 'Customer Service',
+        areaServed: 'IN',
+        availableLanguage: ['en', 'hi'],
+      },
+      address: {
+        '@type': 'PostalAddress',
+        streetAddress: '123 Design Street',
+        addressLocality: 'New Delhi',
+        addressRegion: 'DL',
+        postalCode: '110001',
+        addressCountry: 'IN',
+      },
+    },
+    offers: {
+      '@type': 'Offer',
+      url: 'https://designindianhomes.com/modular-interiors',
+      priceCurrency: 'INR',
+      price: 'Contact for pricing',
+      availability: 'http://schema.org/InStock',
+      validFrom: '2024-09-21',
+    },
+    areaServed: {
+      '@type': 'Place',
+      name: 'India',
+    },
+    category: 'Modular Interiors',
+    potentialAction: {
+      '@type': 'Action',
+      name: 'Book a Modular Interiors Consultation',
+      target: {
+        '@type': 'EntryPoint',
+        urlTemplate:
+          'https://designindianhomes.com/book-modular-interiors-consultation',
+      },
+    },
+  }
+
   const [categoryDataArray, setCategoryDataArray] = useState<any[]>([])
   const categoryFolderMapping: Record<number, string> = {
     106: 'mandir-designs',
@@ -100,37 +153,57 @@ const Page = ({}) => {
 
   return (
     <>
-    <head>
-    <title>Modular Interiors | Modular Kitchens & Wardrobe Brand India</title>
+      <Head>
+        <title>
+          Modular Interiors | Modular Kitchens & Wardrobe Brand India
+        </title>
 
-<meta name="description" content ="Our brand is the largest manufacturers of modular interiors, we are top dealers for modular kitchens, wardrobes across Delhi, gurgaon, noida & India." />
+        <meta
+          name="description"
+          content="Our brand is the largest manufacturers of modular interiors, we are top dealers for modular kitchens, wardrobes across Delhi, gurgaon, noida & India."
+        />
 
-
-<meta name="Author" content="Design Indian Homes" />
-<meta name="Generator" content="www.designindianhomes.com" />
-<meta name="Language" content="en" />
-<meta name="robots" content="index, follow" />
-<meta name="Copyright" content="©www.designindianhomes.com" />
-<meta name="Designer" content="Design Indian Homes Unit" />
-<meta name="Publisher" content="www.designindianhomes.com" />
-<meta name="Distribution" content="Global" />
-<meta name="Rating" content="general" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<link rel="canonical" href="https://designindianhomes.com/modular-interior-design-ideas/"/>
-<meta name="googlebot" content="index, follow" />
-<meta name="Yahoobot" content="index, follow" />
-<meta name="MSNbot" content="Index, Follow" />
-<meta name="allow-search" content="yes" />
-<meta name="country" content="India"/>
-<meta name="contactNumber" content="+91-98-99-26-49-78"/>
-<meta name="dc.language" content="english"/>
-<meta name="geo.region" content="IN-DL" />
-<meta name="geo.placename" content="Delhi" />
-<meta property="og:url" content="https://designindianhomes.com/modular-interior-design-ideas/" />
-<meta property="og:title" content="Modular Interiors | Modular Kitchens & Wardrobe Brand India" />
-<meta property="og:description" content="Our brand is the largest manufacturers of modular interiors, we are top dealers for modular kitchens, wardrobes across Delhi, gurgaon, noida & India" />
-
-    </head>
+        <meta name="Author" content="Design Indian Homes" />
+        <meta name="Generator" content="www.designindianhomes.com" />
+        <meta name="Language" content="en" />
+        <meta name="robots" content="index, follow" />
+        <meta name="Copyright" content="©www.designindianhomes.com" />
+        <meta name="Designer" content="Design Indian Homes Unit" />
+        <meta name="Publisher" content="www.designindianhomes.com" />
+        <meta name="Distribution" content="Global" />
+        <meta name="Rating" content="general" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link
+          rel="canonical"
+          href="https://designindianhomes.com/modular-interior-design-ideas/"
+        />
+        <meta name="googlebot" content="index, follow" />
+        <meta name="Yahoobot" content="index, follow" />
+        <meta name="MSNbot" content="Index, Follow" />
+        <meta name="allow-search" content="yes" />
+        <meta name="country" content="India" />
+        <meta name="contactNumber" content="+91-98-99-26-49-78" />
+        <meta name="dc.language" content="english" />
+        <meta name="geo.region" content="IN-DL" />
+        <meta name="geo.placename" content="Delhi" />
+        <meta
+          property="og:url"
+          content="https://designindianhomes.com/modular-interior-design-ideas/"
+        />
+        <meta
+          property="og:title"
+          content="Modular Interiors | Modular Kitchens & Wardrobe Brand India"
+        />
+        <meta
+          property="og:description"
+          content="Our brand is the largest manufacturers of modular interiors, we are top dealers for modular kitchens, wardrobes across Delhi, gurgaon, noida & India"
+        />
+      </Head>
+      <Script
+        id="jsonld"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      ></Script>
       <ProgressBar />
       <Header />
       <Omsairam />
@@ -190,8 +263,6 @@ const Page = ({}) => {
           ))}
         </div>
       </div>
-
-      
 
       <Footer />
     </>

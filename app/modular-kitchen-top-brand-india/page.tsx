@@ -10,7 +10,58 @@ import ProgressBar from '../../components/Progressbar'
 import MyForm from '../../components/MyForm'
 import Omsairam from '../../components/Navbar/Omsairam'
 import Image from 'next/image'
+import Script from 'next/script'
 const Page = ({}) => {
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'Service',
+    serviceType: 'Modular Kitchen Design and Installation',
+    provider: {
+      '@type': 'Organization',
+      name: 'Design Indian Homes',
+      url: 'https://designindianhomes.com/',
+      logo: 'https://www.designindianhomes.com/images/Logo.gif',
+      description:
+        'Our brand is the largest manufacturers of modular interiors, we are top dealers for modular kitchens, wardrobes across Delhi, Gurgaon, Noida & India.',
+      contactPoint: {
+        '@type': 'ContactPoint',
+        telephone: '+91-9899264978',
+        contactType: 'Customer Service',
+        areaServed: 'IN',
+        availableLanguage: ['en', 'hi'],
+      },
+      address: {
+        '@type': 'PostalAddress',
+        streetAddress: '123 Design Street',
+        addressLocality: 'New Delhi',
+        addressRegion: 'DL',
+        postalCode: '110001',
+        addressCountry: 'IN',
+      },
+    },
+    offers: {
+      '@type': 'Offer',
+      url: 'https://designindianhomes.com/modular-kitchen-top-brand-india',
+      priceCurrency: 'INR',
+      price: 'Contact for pricing',
+      availability: 'http://schema.org/InStock',
+      validFrom: '2024-09-21',
+    },
+    areaServed: {
+      '@type': 'Place',
+      name: 'India',
+    },
+    category: 'Modular Kitchen Design',
+    potentialAction: {
+      '@type': 'Action',
+      name: 'Book a Kitchen Design Consultation',
+      target: {
+        '@type': 'EntryPoint',
+        urlTemplate: 'https://designindianhomes.com/book-kitchen-consultation',
+      },
+    },
+  }
+
   const [categoryDataArray, setCategoryDataArray] = useState<any[]>([])
 
   const categoryFolderMapping: Record<number, string> = {
@@ -96,6 +147,11 @@ const Page = ({}) => {
   }, [title])
   return (
     <>
+      <Script
+        id="jsonld"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      ></Script>
       <ProgressBar />
       <Header />
       <Omsairam />
@@ -153,7 +209,10 @@ const Page = ({}) => {
           <span className="text-green-500 text-sm">
             <Link href="/">Home</Link>
           </span>{' '}
-          / <span className="text-gray-600 text-sm">Modular Kitchens Top Brand</span>
+          /{' '}
+          <span className="text-gray-600 text-sm">
+            Modular Kitchens Top Brand
+          </span>
         </div>
 
         <div className="flex items-center bg- p-4">
@@ -170,31 +229,29 @@ const Page = ({}) => {
         </p>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 px-7 mt-16">
-        <div
-              className="bg-white rounded-md shadow-md p-6">
-             <Link href='/types-of-modular-kitchens'>
-                  <Image
-          
-                    alt='Types of Modular Kitchen'
-                    height={1000}
-                    width={1000}
-                    src="/images/modular_kitchen/larg/best-modular-kitchen-wardrobes-designs-small-kitchen-designs-wardrobe-designs-in-delhi-gurgaon-noida-india (6).jpg"
-                    style={{
-                      width: '450px',
-                      height: '230px',
-                      borderRadius: '10px',
-                    }}
-                  />
-                  
-           
+          <div className="bg-white rounded-md shadow-md p-6">
+            <Link href="/types-of-modular-kitchens">
+              <Image
+                alt="Types of Modular Kitchen"
+                height={1000}
+                width={1000}
+                src="/images/modular_kitchen/larg/best-modular-kitchen-wardrobes-designs-small-kitchen-designs-wardrobe-designs-in-delhi-gurgaon-noida-india (6).jpg"
+                style={{
+                  width: '450px',
+                  height: '230px',
+                  borderRadius: '10px',
+                }}
+              />
+
               <h2 className="text-xl font-semibold mb-4">
-               Types of Modular Kitchens
+                Types of Modular Kitchens
               </h2>
               <p className="text-gray-700 mb-4">
-               Best Modular Kitchens designs in Delhi, Gurgaon, Noida, Faridabad india
+                Best Modular Kitchens designs in Delhi, Gurgaon, Noida,
+                Faridabad india
               </p>
-              </Link>
-            </div>
+            </Link>
+          </div>
           {categoryDataArray.map((categoryData) => (
             <Link
               key={categoryData.id}
@@ -223,35 +280,29 @@ const Page = ({}) => {
               </div>
             </Link>
           ))}
-           <div
-              className="bg-white rounded-md shadow-md p-6">
-             <Link href='/shutter-finish'>
-                  <Image
-          
-                    alt='Types of Modular Kitchen'
-                    height={1000}
-                    width={1000}
-                    src="https://api.designindianwardrobe.com/uploads/acrylic-modular-kitchen-dealers-and-manufacturers-in-delhi-gurgaon-noida-india%20(1).jpg"
-                    style={{
-                      width: '450px',
-                      height: '230px',
-                      borderRadius: '10px',
-                    }}
-                  />
-                  
-           
-              <h2 className="text-xl font-semibold mb-4">
-               Shutter Finish
-              </h2>
+          <div className="bg-white rounded-md shadow-md p-6">
+            <Link href="/shutter-finish">
+              <Image
+                alt="Types of Modular Kitchen"
+                height={1000}
+                width={1000}
+                src="https://api.designindianwardrobe.com/uploads/acrylic-modular-kitchen-dealers-and-manufacturers-in-delhi-gurgaon-noida-india%20(1).jpg"
+                style={{
+                  width: '450px',
+                  height: '230px',
+                  borderRadius: '10px',
+                }}
+              />
+
+              <h2 className="text-xl font-semibold mb-4">Shutter Finish</h2>
               <p className="text-gray-700 mb-4">
-               Best Shutter Finish designs in Delhi, Gurgaon, Noida, Faridabad india
+                Best Shutter Finish designs in Delhi, Gurgaon, Noida, Faridabad
+                india
               </p>
-              </Link>
-            </div>
+            </Link>
+          </div>
         </div>
       </div>
-
-      
 
       <Footer />
     </>
