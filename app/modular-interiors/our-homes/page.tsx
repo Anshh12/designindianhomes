@@ -1,87 +1,87 @@
-'use client'
-import React, { useState, useRef, useEffect } from 'react'
-import Header from '../../../components/Navbar/Header'
-import Footer from '../../../components/Footer/Footer'
-import Head from 'next/head'
-import Link from 'next/link'
-import ProgressBar from '../../../components/Progressbar'
-import Tabs from '../Tabs'
-import Nav from 'react-bootstrap/Nav'
-import Omsairam from '../../../components/Navbar/Omsairam'
-import Modal from 'react-modal'
+"use client";
+import React, { useState, useRef, useEffect } from "react";
+import Header from "../../../components/Navbar/Header";
+import Footer from "../../../components/Footer/Footer";
+import Head from "next/head";
+import Link from "next/link";
+import ProgressBar from "../../../components/Progressbar";
+import Tabs from "../Tabs";
+import Nav from "react-bootstrap/Nav";
+import Omsairam from "../../../components/Navbar/Omsairam";
+import Modal from "react-modal";
 
-import { ChevronRight, ChevronLeft } from 'lucide-react'
-import './HomesSlider.css'
-import Slider from 'react-slick'
-import 'slick-carousel/slick/slick.css'
-import 'slick-carousel/slick/slick-theme.css'
-import Image from 'next/image'
-import axios from 'axios'
+import { ChevronRight, ChevronLeft } from "lucide-react";
+import "./HomesSlider.css";
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import Image from "next/image";
+import axios from "axios";
 const Card = ({ project, handleImageClick }) => {
   const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    number: '',
-    pincode: '',
-    agree: '',
-  })
-  const [btnText, setBtnText] = useState('Submit')
-  const [formSubmitted, setFormSubmitted] = useState(false)
+    name: "",
+    email: "",
+    number: "",
+    pincode: "",
+    agree: "",
+  });
+  const [btnText, setBtnText] = useState("Submit");
+  const [formSubmitted, setFormSubmitted] = useState(false);
   if (!project.images || project.images.length === 0) {
     const handleChange = (event) => {
-      const { name, value } = event.target
+      const { name, value } = event.target;
 
       setFormData((prevData) => ({
         ...prevData,
         [name]: value,
-      }))
-    }
+      }));
+    };
     const handleSubmit = async (event) => {
-      event.preventDefault()
-      console.log('Submitting form...')
-      setFormSubmitted(true)
+      event.preventDefault();
+      console.log("Submitting form...");
+      setFormSubmitted(true);
 
-      const formDataToSend = new FormData()
+      const formDataToSend = new FormData();
       for (const key in formData) {
-        formDataToSend.append(key, formData[key])
+        formDataToSend.append(key, formData[key]);
       }
 
       try {
         console.log(
-          'Form Data to Send:',
+          "Form Data to Send:",
           Object.fromEntries(formDataToSend.entries())
-        )
-        console.log('Uploading data...')
+        );
+        console.log("Uploading data...");
         const response = await fetch(
-          'https://m.designindianhomes.com/submitForm',
+          "https://m.designindianhomes.com/submitForm",
           {
-            method: 'POST',
+            method: "POST",
             body: formDataToSend,
           }
-        )
+        );
 
         if (response.ok) {
-          console.log('Form data submitted successfully!')
+          console.log("Form data submitted successfully!");
           console.log(
-            'Form Data to Send:',
+            "Form Data to Send:",
             Object.fromEntries(formDataToSend.entries())
-          )
-          setBtnText('Done')
+          );
+          setBtnText("Done");
         } else {
-          console.error('Form data submission failed. Response:', response)
-          setBtnText('Something Went Wrong')
+          console.error("Form data submission failed. Response:", response);
+          setBtnText("Something Went Wrong");
         }
       } catch (error) {
-        console.error('Error during form data submission:', error)
-        setBtnText('Something Went Wrong')
+        console.error("Error during form data submission:", error);
+        setBtnText("Something Went Wrong");
       }
 
-      setFormSubmitted(true)
-    }
+      setFormSubmitted(true);
+    };
 
     const handleClose = () => {
-      setFormSubmitted(false)
-    }
+      setFormSubmitted(false);
+    };
 
     // Render a placeholder or loading state if images are not available
     return (
@@ -94,13 +94,13 @@ const Card = ({ project, handleImageClick }) => {
             <Image
               alt="thank you"
               src={
-                'https://img.freepik.com/free-vector/thank-you-placard-concept-illustration_114360-13436.jpg'
+                "https://img.freepik.com/free-vector/thank-you-placard-concept-illustration_114360-13436.jpg"
               }
               width={400}
               height={300}
             />
             <h1 className="text-center font-bold">
-              {' '}
+              {" "}
               FOR ANY PRIORITY BOOKING OF DESIGN/PLANNING MEETING, DO CALL US OR
               WHATSAPP US ON 9899264978, 9582827928
             </h1>
@@ -214,7 +214,7 @@ const Card = ({ project, handleImageClick }) => {
           </div>
         )}
       </div>
-    )
+    );
   }
 
   return (
@@ -223,7 +223,7 @@ const Card = ({ project, handleImageClick }) => {
       className="max-w-sm rounded overflow-hidden shadow-lg relative cursor-pointer"
     >
       <div className="relative h-56 rounded-lg">
-        {' '}
+        {" "}
         <Image
           width={1000}
           height={1000}
@@ -233,12 +233,12 @@ const Card = ({ project, handleImageClick }) => {
         />
         <div className="absolute flex gap-2 top-0 left-0 bg-gray-700 px-2 py-1 text-white text-sm font-semibold rounded-tr rounded-bl">
           <Image
-            src={'https://cdn-icons-png.flaticon.com/512/11159/11159801.png'}
+            src={"https://cdn-icons-png.flaticon.com/512/11159/11159801.png"}
             height={30}
             width={30}
             alt="project-image"
             className="h-[20] w-[20]"
-          />{' '}
+          />{" "}
           {project.images.length}
         </div>
       </div>
@@ -247,24 +247,24 @@ const Card = ({ project, handleImageClick }) => {
         {/* <p className="text-gray-700 text-base">{project.description}</p> */}
       </div>
     </div>
-  )
-}
+  );
+};
 
 const Page = ({}) => {
-  const [projects, setProjects] = useState([])
-  const [projectIndex, setProjectIndex] = useState(0)
-  const [projectName, setProjectName] = useState('')
-  const [currentImageIndex, setCurrentImageIndex] = useState(0)
-  const [prevImage, setPrevImage] = useState('')
-  const [nextImage, setNextImage] = useState('')
-  const [prevProjectName, setPrevProjectName] = useState('')
-  const [nextProjectName, setNextProjectName] = useState('')
-  const [showSlider, setShowSlider] = useState(false)
+  const [projects, setProjects] = useState([]);
+  const [projectIndex, setProjectIndex] = useState(0);
+  const [projectName, setProjectName] = useState("");
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const [prevImage, setPrevImage] = useState("");
+  const [nextImage, setNextImage] = useState("");
+  const [prevProjectName, setPrevProjectName] = useState("");
+  const [nextProjectName, setNextProjectName] = useState("");
+  const [showSlider, setShowSlider] = useState(false);
 
   // console.log('projects: ', projects)
   // console.log('projectIndex : ', projectIndex)
 
-  const sliderRef = useRef(null)
+  const sliderRef = useRef(null);
 
   const sliderSettings = {
     dots: false,
@@ -275,127 +275,127 @@ const Page = ({}) => {
     autoplay: false,
     arrows: true,
     initialSlide: currentImageIndex,
-  }
+  };
 
   const handleImageClick = (index) => {
-    setProjectIndex(index - 1)
-    setShowSlider(true)
+    setProjectIndex(index - 1);
+    setShowSlider(true);
     // console.log('project id', projectIndex)
-  }
+  };
 
   const handleCloseSlider = () => {
-    setShowSlider(false)
-  }
+    setShowSlider(false);
+  };
 
   const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    mobile: '',
-    address: '',
-    Intrested: '',
-    message: '',
-  })
-  const [btnText, setBtnText] = useState('Submit')
-  const [formSubmitted, setFormSubmitted] = useState(false)
+    name: "",
+    email: "",
+    mobile: "",
+    address: "",
+    Intrested: "",
+    message: "",
+  });
+  const [btnText, setBtnText] = useState("Submit");
+  const [formSubmitted, setFormSubmitted] = useState(false);
 
   const handleChange = (event) => {
-    const { name, value } = event.target
+    const { name, value } = event.target;
 
     setFormData((prevData) => ({
       ...prevData,
       [name]: value,
-    }))
-  }
+    }));
+  };
   const handleSubmit = async (event) => {
-    event.preventDefault()
-    console.log('Submitting form...')
-    setFormSubmitted(true)
+    event.preventDefault();
+    console.log("Submitting form...");
+    setFormSubmitted(true);
 
-    const formDataToSend = new FormData()
+    const formDataToSend = new FormData();
     for (const key in formData) {
-      formDataToSend.append(key, formData[key])
+      formDataToSend.append(key, formData[key]);
     }
 
     try {
       console.log(
-        'Form Data to Send:',
+        "Form Data to Send:",
         Object.fromEntries(formDataToSend.entries())
-      )
-      console.log('Uploading data...')
+      );
+      console.log("Uploading data...");
       const response = await fetch(
-        'https://m.designindianhomes.com/submitForm',
+        "https://m.designindianhomes.com/submitForm",
         {
-          method: 'POST',
+          method: "POST",
           body: formDataToSend,
         }
-      )
+      );
 
-      console.log('Response status:', response.status)
-      console.log('Response headers:', response.headers)
-      console.log('Response body:', await response.text())
+      console.log("Response status:", response.status);
+      console.log("Response headers:", response.headers);
+      console.log("Response body:", await response.text());
 
       if (response.ok) {
-        console.log('Form data submitted successfully!')
+        console.log("Form data submitted successfully!");
         console.log(
-          'Form Data to Send:',
+          "Form Data to Send:",
           Object.fromEntries(formDataToSend.entries())
-        )
-        setBtnText('Done')
+        );
+        setBtnText("Done");
       } else {
-        console.error('Form data submission failed. Response:', response)
-        setBtnText('Something Went Wrong')
+        console.error("Form data submission failed. Response:", response);
+        setBtnText("Something Went Wrong");
       }
     } catch (error) {
-      console.error('Error during form data submission:', error)
-      setBtnText('Something Went Wrong')
+      console.error("Error during form data submission:", error);
+      setBtnText("Something Went Wrong");
     }
 
-    setFormSubmitted(true)
-  }
+    setFormSubmitted(true);
+  };
   const handleClose = () => {
-    setFormSubmitted(false)
+    setFormSubmitted(false);
     // Add any additional logic you want to perform when closing the thank-you page
-  }
+  };
   const handlePrev = () => {
     setCurrentImageIndex(
       (prevIndex) =>
         (prevIndex - 1 + projects[projectIndex]?.images?.length) %
         projects[projectIndex]?.images?.length
-    )
+    );
     if (sliderRef.current) {
-      sliderRef.current.slickPrev()
+      sliderRef.current.slickPrev();
     }
-  }
+  };
   const handleNext = () => {
     setCurrentImageIndex(
       (prevIndex) => (prevIndex + 1) % projects[projectIndex]?.images?.length
-    )
+    );
     if (sliderRef.current) {
-      sliderRef.current.slickNext()
+      sliderRef.current.slickNext();
     }
-  }
+  };
 
   const nextProject = () => {
-    setProjectIndex((prevIndex) => (prevIndex + 1) % projects.length)
-    setCurrentImageIndex(0)
-  }
+    setProjectIndex((prevIndex) => (prevIndex + 1) % projects.length);
+    setCurrentImageIndex(0);
+  };
 
   const prevProject = () => {
     setProjectIndex(
       (prevIndex) => (prevIndex - 1 + projects.length) % projects.length
-    )
-    setCurrentImageIndex(0)
-  }
+    );
+    setCurrentImageIndex(0);
+  };
 
   useEffect(() => {
     const fetchProjects = async () => {
       try {
         const projectsResponse = await axios.get(
-          'https://api.designindianwardrobe.com/api/projects'
-        )
+          "https://api.designindianwardrobe.com/api/projects"
+        );
 
         if (projectsResponse.status === 200) {
-          const projectsData = projectsResponse.data
+          const projectsData = projectsResponse.data;
           // console.log('projectsData', projectsData)
           // Fetch images for each project using Axios
           const projectsWithImages = await Promise.all(
@@ -403,58 +403,61 @@ const Page = ({}) => {
               try {
                 const imagesResponse = await axios.get(
                   `https://api.designindianwardrobe.com/api/projects/images/${project.id}`
-                )
+                );
 
                 if (imagesResponse.status === 200) {
-                  const imagesData = imagesResponse.data
-                  return { ...project, images: imagesData }
+                  const imagesData = imagesResponse.data;
+                  return { ...project, images: imagesData };
                 } else {
                   console.error(
                     `Error fetching images for project ${project.id}:`,
                     imagesResponse.statusText
-                  )
-                  return project
+                  );
+                  return project;
                 }
               } catch (error) {
                 console.error(
                   `Error during image fetch for project ${project.id}:`,
                   error.message
-                )
-                return project
+                );
+                return project;
               }
             })
-          )
+          );
 
-          setProjects(projectsWithImages)
+          setProjects(projectsWithImages);
         } else {
-          console.error('Error fetching projects:', projectsResponse.statusText)
+          console.error(
+            "Error fetching projects:",
+            projectsResponse.statusText
+          );
         }
       } catch (error) {
-        console.error('Error during fetch:', error.message)
+        console.error("Error during fetch:", error.message);
       }
-    }
+    };
 
-    fetchProjects()
-  }, [])
+    fetchProjects();
+  }, []);
 
   // useEffect(() => {
   //   console.log('projects', projects)
   // }, [projects])
 
   useEffect(() => {
-    const prevIndex = (projectIndex - 1 + projects.length) % projects.length
-    const prevProjectImages = projects[prevIndex]?.images || []
-    const prevProjectFirstImage = prevProjectImages[0]?.filename || ''
-    setPrevImage(prevProjectFirstImage)
-    setPrevProjectName(projects[prevIndex]?.name || '')
+    const prevIndex = (projectIndex - 1 + projects.length) % projects.length;
+    const prevProjectImages = projects[prevIndex]?.images || [];
+    const prevProjectFirstImage = prevProjectImages[0]?.filename || "";
+    setPrevImage(prevProjectFirstImage);
+    setPrevProjectName(projects[prevIndex]?.name || "");
 
-    const nextIndex = (projectIndex + 1) % projects.length
-    const nextProjectImages = projects[nextIndex]?.images || []
-    const nextProjectFirstImage = nextProjectImages[0]?.filename || ''
-    setNextImage(nextProjectFirstImage)
-    setNextProjectName(projects[nextIndex]?.name || '')
-    setProjectName(projects[projectIndex - 1]?.name || '')
-  }, [projectIndex, projects])
+    const nextIndex = (projectIndex + 1) % projects.length;
+    const nextProjectImages = projects[nextIndex]?.images || [];
+    const nextProjectFirstImage = nextProjectImages[0]?.filename || "";
+    setNextImage(nextProjectFirstImage);
+    setNextProjectName(projects[nextIndex]?.name || "");
+    setProjectName(projects[projectIndex - 1]?.name || "");
+  }, [projectIndex, projects]);
 
   return (
     <>
@@ -466,11 +469,11 @@ const Page = ({}) => {
         <div className="p-4  ">
           <span className="text-green-500 text-sm">
             <Link href="/">Home</Link>
-          </span>{' '}
-          /{' '}
+          </span>{" "}
+          /{" "}
           <span className="text-green-500 text-sm">
             <Link href="/design-ideas">Design ideas</Link>
-          </span>{' '}
+          </span>{" "}
           / <span className="text-gray-600 text-sm">Our Homes</span>
         </div>
 
@@ -529,7 +532,7 @@ const Page = ({}) => {
                     projects[projectIndex]?.images.map((image, index) => (
                       <div key={index} className="overflow-hidden">
                         <Image
-                          src={`https://api.designindianwardrobe.com/uploads/project-upload/${image.filename}`}
+                          src={`https://api.designindianwardrobe.com/backend/uploads/project-upload/${image.filename}`}
                           alt={projects[projectIndex]?.name}
                           width={1000}
                           height={1000}
@@ -540,7 +543,7 @@ const Page = ({}) => {
                   ) : (
                     <div className="overflow-hidden w-full p-16 flex justify-center">
                       <p className="text-center font-semibold text-xl sm:text-2xl md:text-4xl lg:text-5xl w-fit mx-auto">
-                        SORRY... <br/> NO IMAGES FOUND
+                        SORRY... <br /> NO IMAGES FOUND
                       </p>
                     </div>
                   )}
@@ -579,13 +582,13 @@ const Page = ({}) => {
                       <Image
                         alt="thank you"
                         src={
-                          'https://img.freepik.com/free-vector/thank-you-placard-concept-illustration_114360-13436.jpg'
+                          "https://img.freepik.com/free-vector/thank-you-placard-concept-illustration_114360-13436.jpg"
                         }
                         width={400}
                         height={300}
                       />
                       <h1 className="text-center font-bold">
-                        {' '}
+                        {" "}
                         FOR ANY PRIORITY BOOKING OF DESIGN/PLANNING MEETING, DO
                         CALL US OR WHATSAPP US ON 9899264978, 9582827928
                       </h1>
@@ -829,38 +832,38 @@ const Page = ({}) => {
                             </span>
                           </button>
                         </Link>
-                        <div className='flex gap-2'>
-                <div>
-                <button className="bg-red-600 text-white text-m py-3 px-6 rounded-full mt-6">
-            <Link href="/luxury-residence-designs-delhi-india">
-              Luxury Interiors
-            </Link>
-          </button>
-                </div>
-                <div>
-                <button className="bg-red-600 text-white text-m py-3 px-6 rounded-full mt-6">
-            <Link href="/homes-by-design-indian-homes">
-              Homes By DIH
-            </Link>
-          </button>
-                </div>
-              </div>
-              <div className='flex gap-2'>
-                <div>
-                <button className="bg-red-600 text-white text-m py-3 px-6 rounded-full mt-6">
-            <Link href="/selected-homes-exclusive-interior-designs-india">
-              Selected Homes
-            </Link>
-          </button>
-                </div>
-                <div>
-                <button className="bg-red-600 text-white text-m py-3 px-6 rounded-full mt-6">
-            <Link href="/refer-and-get-rewards-interior-designers">
-             Refer For Rewards
-            </Link>
-          </button>
-                </div>
-              </div>
+                        <div className="flex gap-2">
+                          <div>
+                            <button className="bg-red-600 text-white text-m py-3 px-6 rounded-full mt-6">
+                              <Link href="/luxury-residence-designs-delhi-india">
+                                Luxury Interiors
+                              </Link>
+                            </button>
+                          </div>
+                          <div>
+                            <button className="bg-red-600 text-white text-m py-3 px-6 rounded-full mt-6">
+                              <Link href="/homes-by-design-indian-homes">
+                                Homes By DIH
+                              </Link>
+                            </button>
+                          </div>
+                        </div>
+                        <div className="flex gap-2">
+                          <div>
+                            <button className="bg-red-600 text-white text-m py-3 px-6 rounded-full mt-6">
+                              <Link href="/selected-homes-exclusive-interior-designs-india">
+                                Selected Homes
+                              </Link>
+                            </button>
+                          </div>
+                          <div>
+                            <button className="bg-red-600 text-white text-m py-3 px-6 rounded-full mt-6">
+                              <Link href="/refer-and-get-rewards-interior-designers">
+                                Refer For Rewards
+                              </Link>
+                            </button>
+                          </div>
+                        </div>
                       </div>
                     </form>
                   )}
@@ -882,7 +885,7 @@ const Page = ({}) => {
                   <Image
                     width={1000}
                     height={1000}
-                    src={`https://api.designindianwardrobe.com/uploads/project-upload/${prevImage}`}
+                    src={`https://api.designindianwardrobe.com/backend/uploads/project-upload/${prevImage}`}
                     alt="Description of the image"
                     className="sm:mr-2 w-8 sm:w-10 h-8 sm:h-10"
                   />
@@ -902,7 +905,7 @@ const Page = ({}) => {
                   <Image
                     width={1000}
                     height={1000}
-                    src={`https://api.designindianwardrobe.com/uploads/project-upload/${nextImage}`}
+                    src={`https://api.designindianwardrobe.com/backend/uploads/project-upload/${nextImage}`}
                     alt="Description of the image"
                     className="sm:mr-2 w-8 sm:w-10 h-8 sm:h-10"
                   />
@@ -924,7 +927,7 @@ const Page = ({}) => {
 
       <Footer />
     </>
-  )
-}
+  );
+};
 
-export default Page
+export default Page;
