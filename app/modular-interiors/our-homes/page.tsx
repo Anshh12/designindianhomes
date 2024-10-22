@@ -228,7 +228,7 @@ const Card = ({ project, handleImageClick }) => {
           width={1000}
           height={1000}
           className="absolute h-full w-full object-cover"
-          src={`https://api.designindianwardrobe.com/backend/uploads/project-upload/${project.images[0].filename}`}
+          src={`https://api.designindianwardrobe.com/uploads/project-upload/${project.images[0].filename}`}
           alt={project.heading}
         />
         <div className="absolute flex gap-2 top-0 left-0 bg-gray-700 px-2 py-1 text-white text-sm font-semibold rounded-tr rounded-bl">
@@ -886,7 +886,7 @@ const Page = ({}) => {
                   <Image
                     width={1000}
                     height={1000}
-                    src={`https://api.designindianwardrobe.com/backend/uploads/project-upload/${prevImage}`}
+                    src={`https://api.designindianwardrobe.com/uploads/project-upload/${prevImage}`}
                     alt="Description of the image"
                     className="sm:mr-2 w-8 sm:w-10 h-8 sm:h-10"
                   />
@@ -906,7 +906,7 @@ const Page = ({}) => {
                   <Image
                     width={1000}
                     height={1000}
-                    src={`https://api.designindianwardrobe.com/backend/uploads/project-upload/${nextImage}`}
+                    src={`https://api.designindianwardrobe.com/uploads/project-upload/${nextImage}`}
                     alt="Description of the image"
                     className="sm:mr-2 w-8 sm:w-10 h-8 sm:h-10"
                   />
