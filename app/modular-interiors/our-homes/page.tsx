@@ -228,7 +228,7 @@ const Card = ({ project, handleImageClick }) => {
           width={1000}
           height={1000}
           className="absolute h-full w-full object-cover"
-          src={`https://api.designindianwardrobe.com/uploads/project-upload/${project.images[0].filename}`}
+          src={`https://api.designindianwardrobe.com/backend/uploads/project-upload/${project.images[0].filename}`}
           alt={project.heading}
         />
         <div className="absolute flex gap-2 top-0 left-0 bg-gray-700 px-2 py-1 text-white text-sm font-semibold rounded-tr rounded-bl">
@@ -479,6 +479,7 @@ const Page = ({}) => {
 
         <Tabs id={14} />
 
+        {/* Imagess Card */}
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 px-7 mt-16">
           {projects.map((project) => (
             <Card
