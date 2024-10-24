@@ -230,6 +230,7 @@ const Card = ({ project, handleImageClick }) => {
           className="absolute h-full w-full object-cover"
           src={`https://api.designindianwardrobe.com/uploads/project-upload/${project.images[0].filename}`}
           alt={project.heading}
+          unoptimized={true}
         />
         <div className="absolute flex gap-2 top-0 left-0 bg-gray-700 px-2 py-1 text-white text-sm font-semibold rounded-tr rounded-bl">
           <Image
