@@ -274,8 +274,7 @@ const nextConfig = {
       },
       {
         source: '/interior-renovation-services',
-        destination: '/home-renovation-service/interior-design',
-      },
+        destination: '/home-renovation-service/interior-design',},
       {
         source: '/architectural-renovation-services',
         destination: '/home-renovation-service/architectural-services',
